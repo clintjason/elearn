@@ -1,0 +1,146 @@
+html{
+	margin: 0;
+}
+/* body style */
+body { 	
+	height: 100%;
+	margin: 0;
+    padding-top: 51px;
+    overflow-x: hidden;
+}
+
+.wrapper {
+  min-height: 100%;
+  max-width: 100%;
+  /* Equal to height of footer */
+  /* But also accounting for potential margin-bottom of last child */
+  margin-bottom: -40px;
+  overflow-x: hidden;
+}
+
+/* style for search bar in navbar */
+#navBarSearchForm input[type=text]{width:400px !important;}
+
+/******************************************************************************/
+/* Styling of the navbar dropdown of learner dashboard*/
+ /* Dropdown Button */
+.dropbtn {
+    color: #9d9d9d;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+	font-size: 14px;
+    cursor: pointer;
+    position: relative;
+    top: 15px;
+    padding: 0 7px;
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    margin-top: 25px;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+    color: #9d9d9d;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {background-color: gray;color: white;}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+.dropdown:hover .dropbtn:hover {
+    color: #ffffff;
+    padding: 15px 10px;
+}
+
+/**************************************************************/
+
+/* JUmbotron modification of home page
+.jumbotron {
+background-image: url("./img/background_index.jpeg");
+/*background-size: cover;
+height: 100%;
+}*/
+/*
+.glyphicon.glyphicon-globe, .glyphicon.glyphicon-check, .glyphicon.glyphicon-edit {
+    font-size: 40px;
+}*/
+
+.push{
+	height: 40px;
+}
+/*Footer */
+.footer {
+  position: absolute;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: 50px;
+  background-color:  	#000000;
+  margin-bottom:0px;
+}
+/* HOme page testimonial CSS*/
+/* carousel */
+#quote-carousel {
+  padding: 0 10px 30px 10px;
+  margin-top: 30px;
+  text-align:center;
+}
+/* indicator position */
+#quote-carousel .carousel-indicators {
+  right: 50%;
+  top: auto;
+  bottom: -10px;
+  margin-right: -19px;
+}
+/* indicator color */
+#quote-carousel .carousel-indicators li {
+  background: #c0c0c0;
+}
+/* active indicator */
+#quote-carousel .carousel-indicators .active {
+  background: #333333;
+  height:10px;
+  width:10px;
+  margin-bottom:1px;
+}
+
+/* Register Learner*/
+.register_learner{
+	margin: 100px 100px;
+	position: relative;
+	left: 410px;
+}
+.register_learner input, .login_learner input{
+	width: 30%;
+}
+/* Login Learner style */
+.login_learner{
+	margin: 174px 100px;
+	position: relative;
+	left: 410px;
+}
+/* GLyphicons enlarge size styling*/
+.gi-2x{font-size: 2em;}
+.gi-3x{font-size: 3em;}
+.gi-4x{font-size: 4em;}
+.gi-5x{font-size: 5em;}
