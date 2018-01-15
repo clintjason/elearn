@@ -1,0 +1,32 @@
+{% extends 'layout.html' %}
+{% from 'includes/_formhelpers.html' import render_field %}
+{% block body %}
+	<div class="container-fluid">
+      <div class="row">
+      	<!-- Side bar -->
+        <div class="col-sm-3 col-md-2 sidebar">
+          <ul class="nav nav-sidebar">
+            <li><a href='/student_edit_profile'>Edit Profile</a></li>
+          </ul>
+          <ul class="nav nav-sidebar">
+            <li><a href="/student_notification">Messages & Resources</a></li>
+          </ul>
+          <ul class="nav nav-sidebar">
+            <li><a href='/learner_analyze_skill_gap'>Analyze Skill Gap</a></li>
+          </ul>
+          <ul class="nav nav-sidebar">
+            <li><a href="#">Courses</a></li>
+          </ul>
+          <ul class="nav nav-sidebar">
+            <li><a href="#">Psychometric Test</a></li>
+          </ul>       
+        </div>
+        <!-- Main Content -->
+        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+          <h1 class="page-header" style="margin: 40px 0px;text-align: center;">Student Info</h1>
+            
+		</div>
+      </div>
+    </div>
+	<div class="push" style="margin-bottom: 210px"></div>
+{% endblock %}

@@ -1,0 +1,22 @@
+{% extends 'layout.html' %}
+{% block body %}
+	<h1>Tests</h1>
+	{{key}}
+	<br>
+	{{value}}
+	<br>
+	{{prerequisites}}
+	<p>Now lets see</p>
+	<br>
+	{% for dic in prerequisites: %}
+		{% for k, val in dic.iteritems(): %}
+			{% if k == key: %}
+				{% for index in range(0, val|length): %}
+					 <p><input type="checkbox" name={{val[index]}} value='checks'> <span style="position: bottom:15px;">{{val[index]}}</span><br></p>
+				{% endfor %}
+			{% endif %}
+		{% endfor %}
+	{% endfor %}
+	 <div style="margin-bottom: 40px;"></div>
+
+{% endblock %}

@@ -1,0 +1,96 @@
+    <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a href="#"><img class="img img-responsive" src="{{url_for('static',filename='img/logo3_1_75.png')}}" style="position: relative;left: 20px;top: 6px;"></a>
+        </div>
+        <div class="collapse navbar-collapse" style="position: relative;left: 40px;">
+          <ul class="nav navbar-nav">
+            <li><a href="/"><span class="glyphicon glyphicon-th"></span> Course Library</a></li>
+            <li>
+              <div class="col-sm-3 col-md-3">
+              <form class="navbar-form" role="search" id="navBarSearchForm">
+                <div class="input-group">
+                    <input type="text" class="form-control" placeholder="Search for Courses" name="srch-term" id="srch-term">
+                    <div class="input-group-btn">
+                        <button class="btn btn-default" type="submit"><i class="glyphicon glyphicon-search"></i></button>
+                    </div>
+                </div>
+              </form>
+            </div>
+          </li>
+            {% if session.tutor_logged_in: %}
+                 <li class="dropdown">
+                        <span class="dropbtn"><i class="glyphicon glyphicon-dashboard"></i> Tutor Profile</span> 
+                        <div class="dropdown-content">
+                          <a href="/tutor_edit_profile"><i class="glyphicon glyphicon-user"></i> Edit Profile</a>
+                          <a href="/tutor_messages"><i class="glyphicon glyphicon-send"></i> Messages</a>
+                          <a href="/tutor_connect"><i class=" glyphicon glyphicon-home"></i> Tutor Connect</a>
+                        </div>
+                </li>
+                <li><a href='/instructor_register'>Become an Instructor</a></li>
+                <li><a href="/tutor_messages"><i class="glyphicon glyphicon-bell"></i> Notifications</a></li>
+                <li><a href="/tutor_logout"><i class="glyphicon glyphicon-log-out"></i> Logout</a></li>
+                <li><a href="/"><i class="glyphicon glyphicon-home"></i></a></li>
+            {% elif session.student_logged_in: %}
+                <li class="dropdown">
+                        <span class="dropbtn"><i class="glyphicon glyphicon-dashboard"></i> Student Profile</span> 
+                        <div class="dropdown-content">
+                          <a href="/student_edit_profile"><i class="glyphicon glyphicon-user"></i> Edit Profile</a>
+                          <a href="/student_messages"><i class="glyphicon glyphicon-send"></i> Messages</a>
+                          <a href="/student_connect"><i class=" glyphicon glyphicon-home"></i> Student Connect</a>
+                        </div>
+                </li>
+                <li><a href='/instructor_register'>Become an Instructor</a></li>
+                <li><a href="/student_messages"><i class="glyphicon glyphicon-bell"></i> Notifications</a></li>
+                <li><a href="/student_logout"><i class="glyphicon glyphicon-log-out"></i> Logout</a></li>
+                <li><a href="/"><i class="glyphicon glyphicon-home"></i></a></li>
+            {% elif session.instructor_logged_in: %}
+                <li><a href='/tutor_student_home'>Become a Tutor</a></li>
+                <li class="dropdown">
+                        <span class="dropbtn"><i class="glyphicon glyphicon-wrench"></i> Instructor</span> 
+                        <div class="dropdown-content">
+                          <a href="/instructor_edit_profile"><i class="glyphicon glyphicon-user"></i> Edit Profile</a>
+                          <a href="/instructor_messages"><i class="glyphicon glyphicon-bell"></i> Messages</a>
+                          <a href="/instructor_create_course"><i class="glyphicon glyphicon-edit"></i> Create Course</a>
+                        </div>
+                </li>      
+                <li><a href="/instructor_messages"><i class="glyphicon glyphicon-bell"></i> Notifications</a></li>
+                <li><a href="/instructor_logout"><i class="glyphicon glyphicon-log-out"></i> Logout</a></li>
+                <li><a href="/"><i class="glyphicon glyphicon-home"></i></a></li>
+            {% elif session.learner_logged_in: %}
+                <li><a href='/tutor_student_home'>Become a Tutor</a></li>
+                <li><a href='/instructor_register'>Become an Instructor</a></li>
+                <li class="dropdown">
+                        <span class="dropbtn"><i class="glyphicon glyphicon-dashboard"></i> Dashboard</span> 
+                        <div class="dropdown-content">
+                          <a href="/learner_edit_profile"><i class="glyphicon glyphicon-user"></i> Edit Profile</a>
+                          <a href="/learner_notification"><i class="glyphicon glyphicon-bell"></i> Notifications</a>
+                          <a href="/learner_analyze_skill_gap"><i class=" glyphicon glyphicon-flash"></i> Analyze Skill Gap</a>
+                        </div>
+                </li>      
+                <li><a href="/learner_logout"><i class="glyphicon glyphicon-log-out"></i> Logout</a></li>
+                <li><a href="/"><i class="glyphicon glyphicon-home"></i></a></li>
+            {% else: %}
+                <li><a href='/tutor_student_home'>Become a Tutor</a></li>
+                <li><a href='/instructor_register'>Become an Instructor</a></li>
+                <li><a href="/learner_register"><i class="glyphicon glyphicon-new-window"></i> Sign Up</a></li>
+                <li><a href="/learner_login"><i class="glyphicon glyphicon-log-in"></i> Sign In</a></li>
+                <li><a href="/"><i class="glyphicon glyphicon-home"></i></a></li>
+            {% endif %} 
+          </ul>          
+        </div><!--/.nav-collapse pull-right.   <i class="glyphicon glyphicon-dashboard"></i> Dashboard-->
+    </div>
+    <!--<ul class="nav navbar-nav navbar-right">
+            {% if session.logged_in: %}
+                <li><a href="/dashboard">Dashboard</a></li>                
+                <li><a href="/learner_logout">Logout</a></li>
+            {% else: %}
+                <li><a href="/learner_register">Sign Up</a></li>
+                <li><a href="/learner_login">Sign In</a></li>
+            {% endif %}      
+          </ul> -->

@@ -1,0 +1,387 @@
+{% extends 'layout.html' %}
+{% block body %}
+	<div class="wrapper">
+		<!-- Main jumbotron for a primary marketing message or call to action ./static/img/background_image4.jpeg-->
+	    <div class="jumbotron" style="background-image: url('./static/img/elearning.jpg'); background-size: 100% 100%;">
+	      <div class="container" style="position: relative;left: 400px;">
+	        {% if session['logged_in']: %}
+	        	<h1 style="color: white;position: relative;right: 200px;">Learn a Skill on your Schedule</h1>
+	        	<p style="color: white;">Sign Up Now and get 30 days free trial.</p>
+	        {% else: %}
+	        	<h2 style="color: white;">Learn a Skill on your Schedule</h2>
+	       		<p style="color: white;">Sign Up Now and get 30 days free trial.</p>
+	       		<p style="position: relative;left: 125px;"><a class="btn btn-primary btn-lg" role="button" href="/learner_register">Sign Up &raquo;</a></p>
+	        {% endif %}        
+	      </div>
+	    </div>
+	    <!-- Next section after jumbotron -->
+	    <div class="container">
+	    	<div class="row" style="position: relative;left:90px;">
+	    		<div class="col-md-4">
+	    			<span class="glyphicon glyphicon-globe gi-5x" style="position: relative;left: 75px;"></span>
+	    			<h5>Learn AnyWhere on the Globe</h5>			
+	    			
+	    		</div>
+	    		<div class="col-md-4">
+	    			<span class="glyphicon glyphicon-check gi-5x" style="position: relative;left: 75px;"></span>
+	    			<h5 style="position: relative;left: 58px;">Expert Teacher</h5>    			
+	    		</div>
+	    		<div class="col-md-4">
+	    			<span class="glyphicon glyphicon-edit gi-5x" style="position: relative;left: 75px;"></span>
+	    			<h5 style="position: relative;left: 58px;">Online Courses</h5>
+	    		</div>    		
+	    	</div>
+	    </div>
+	    
+	    <!-- Section to display tutor-learner connect module  ./static/img/background_index2.jpeg-->
+		<div class="jumbotron" style="background-image: url('./static/img/tutor2.png'); background-size: 100% 100%;margin-top: 25px;">
+	      <div class="container" style="position: relative;left: 400px;">
+	        <h2 style="color: white;">Tutor-Learners Module</h2>
+	        <p style="position: relative;right: 205px;color: white;">Sign Up Now and get connected with tutors and students all over the world.</p>
+	        <p style="position: relative;left: 90px;"><a class="btn btn-primary btn-lg" role="button" href='/tutor_student_home'>Sign Up</a></p>
+	      </div>
+		</div>
+
+		 <!-- Section to display analyse skill gap view-->
+	    <div class="container">
+	    	<h1 style="text-align:center;">Analyse Skill Gap</h1>
+	    	<hr style="width: 10%; border-color: green;height: 20px;">
+	    	<h4 style="text-align: center;"><i class="glyphicon glyphicon-tint"></i> Know your skill gap</h4>
+	    	<p style="text-align: center;">Make use of our skill gap analysis module to know your skill gap and get suggestions to fill the gaps.</p>
+	    </div>
+
+		<!-- Section to display courses in categories content -->
+	    <div class="container" style="margin-bottom: 10px">
+	    	<h1 style="text-align: center;">Course Library</h1>
+	    	<div class="tcb-product-slider">
+		        <div class="container">
+		            <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+		                <!-- Wrapper for slides -->
+		                <div class="carousel-inner" role="listbox">
+		                    <div class="item active">
+		                        <div class="row">
+		                            <div class="col-xs-6 col-sm-3">
+		                                <div class="tcb-product-item">
+		                                    <div class="tcb-product-photo">
+		                                        <a href="#"><img src="{{url_for('static',filename='img/courses/image.jpeg')}}" class="img-responsive" alt="a" /></a>
+		                                    </div>
+		                                    <div class="tcb-product-info">
+		                                        <div class="tcb-product-title">
+		                                            <h4><a href="#">Complete Web Development Bootcamp </a></h4></div>
+		                                        <div class="tcb-product-rating">
+		                                            <i class="active glyphicon glyphicon-star"></i><i class="active glyphicon glyphicon-star"></i><i class="active glyphicon glyphicon-star"></i><i class="active glyphicon glyphicon-star"></i><i class="glyphicon glyphicon-star"></i>
+		                                            <a href="#">(4,585 ratings)</a>
+		                                        </div>
+		                                        <div class="tcb-hline"></div>
+		                                        <div class="tcb-product-price">
+		                                            $ 80.00 (17% off)
+		                                        </div>
+		                                    </div>
+		                                </div>
+		                            </div>
+		                            <div class="col-xs-6 col-sm-3">
+		                                <div class="tcb-product-item">
+		                                    <div class="tcb-product-photo">
+		                                        <a href="#"><img src="{{url_for('static',filename='img/courses/image1.jpg')}}" class="img-responsive" alt="a" /></a>
+		                                    </div>
+		                                    <div class="tcb-product-info">
+		                                        <div class="tcb-product-title">
+		                                            <h4><a href="#">Advanced Web Developer Bootcamp</a></h4></div>
+		                                        <div class="tcb-product-rating">
+		                                            <i class="active glyphicon glyphicon-star"></i><i class="active glyphicon glyphicon-star"></i><i class="active glyphicon glyphicon-star"></i><i class="glyphicon glyphicon-star"></i><i class="glyphicon glyphicon-star"></i>
+		                                            <a href="#">(245 ratings)</a>
+		                                        </div>
+		                                        <div class="tcb-hline"></div>
+		                                        <div class="tcb-product-price">
+		                                            $ 99.00 (21% off)
+		                                        </div>
+		                                    </div>
+		                                </div>
+		                            </div>
+		                            <div class="col-xs-6 col-sm-3">
+		                                <div class="tcb-product-item">
+		                                    <div class="tcb-product-photo">
+		                                        <a href="#"><img src="{{url_for('static',filename='img/courses/image2.jpg')}}" class="img-responsive" alt="a" /></a>
+		                                    </div>
+		                                    <div class="tcb-product-info">
+		                                        <div class="tcb-product-title">
+		                                            <h4><a href="#">The Web Developer Bootcamp</a></h4></div>
+		                                        <div class="tcb-product-rating">
+		                                            <i class="active glyphicon glyphicon-star"></i><i class="active glyphicon glyphicon-star"></i><i class="glyphicon glyphicon-star"></i><i class="glyphicon glyphicon-star"></i><i class="glyphicon glyphicon-star"></i>
+		                                            <a href="#">(345 ratings)</a>
+		                                        </div>
+		                                        <div class="tcb-hline"></div>
+		                                        <div class="tcb-product-price">
+		                                            $ 90.00 (33% off)
+		                                        </div>
+		                                    </div>
+		                                </div>
+		                            </div>
+		                            <div class="col-xs-6 col-sm-3">
+		                                <div class="tcb-product-item">
+		                                    <div class="tcb-product-photo">
+		                                        <a href="#"><img src="{{url_for('static',filename='img/courses/image3.jpg')}}" class="img-responsive" alt="a" /></a>
+		                                    </div>
+		                                    <div class="tcb-product-info">
+		                                        <div class="tcb-product-title">
+		                                            <h4><a href="#">Introduction to Programming</a></h4></div>
+		                                        <div class="tcb-product-rating">
+		                                            <i class="active glyphicon glyphicon-star"></i><i class="glyphicon glyphicon-star"></i><i class="glyphicon glyphicon-star"></i><i class="glyphicon glyphicon-star"></i><i class="glyphicon glyphicon-star"></i>
+		                                            <a href="#">(45 ratings)</a>
+		                                        </div>
+		                                        <div class="tcb-hline"></div>
+		                                        <div class="tcb-product-price">
+		                                            $ 70.00 (37% off)
+		                                        </div>
+		                                    </div>
+		                                </div>
+		                            </div>
+		                        </div>
+		                    </div>
+		                    <div class="item">
+		                        <div class="row">
+		                            <div class="col-xs-6 col-sm-3">
+		                                <div class="tcb-product-item">
+		                                    <div class="tcb-product-photo">
+		                                        <a href="#"><img src="{{url_for('static',filename='img/courses/image4.jpg')}}" class="img-responsive" alt="a" /></a>
+		                                    </div>
+		                                    <div class="tcb-product-info">
+		                                        <div class="tcb-product-title">
+		                                            <h4><a href="#">Effective Time Management</a></h4></div>
+		                                        <div class="tcb-product-rating">
+		                                            <i class="active glyphicon glyphicon-star"></i><i class="active glyphicon glyphicon-star"></i><i class="active glyphicon glyphicon-star"></i><i class="glyphicon glyphicon-star"></i><i class="glyphicon glyphicon-star"></i>
+		                                            <a href="#">(2,125 ratings)</a>
+		                                        </div>
+		                                        <div class="tcb-hline"></div>
+		                                        <div class="tcb-product-price">
+		                                            $ 49.00 (40% off)
+		                                        </div>
+		                                    </div>
+		                                </div>
+		                            </div>
+		                            <div class="col-xs-6 col-sm-3">
+		                                <div class="tcb-product-item">
+		                                    <div class="tcb-product-photo">
+		                                        <a href="#"><img src="{{url_for('static',filename='img/courses/image5.jpg')}}" class="img-responsive" alt="a" /></a>
+		                                    </div>
+		                                    <div class="tcb-product-info">
+		                                        <div class="tcb-product-title">
+		                                            <h4><a href="#">Learn Database Design with MySQL</a></h4></div>
+		                                        <div class="tcb-product-rating">
+		                                            <i class="active glyphicon glyphicon-star"></i><i class="active glyphicon glyphicon-star"></i><i class="glyphicon glyphicon-star"></i><i class="glyphicon glyphicon-star"></i><i class="glyphicon glyphicon-star"></i>
+		                                            <a href="#">(5 ratings)</a>
+		                                        </div>
+		                                        <div class="tcb-hline"></div>
+		                                        <div class="tcb-product-price">
+		                                            $ 20.00
+		                                        </div>
+		                                    </div>
+		                                </div>
+		                            </div>
+		                            <div class="col-xs-6 col-sm-3">
+		                                <div class="tcb-product-item">
+		                                    <div class="tcb-product-photo">
+		                                        <a href="#"><img src="{{url_for('static',filename='img/courses/image6.jpg')}}" class="img-responsive" alt="a" /></a>
+		                                    </div>
+		                                    <div class="tcb-product-info">
+		                                        <div class="tcb-product-title">
+		                                            <h4><a href="#">Javascript: Understanding the Weird Parts</a></h4></div>
+		                                        <div class="tcb-product-rating">
+		                                            <i class="active glyphicon glyphicon-star"></i><i class="active glyphicon glyphicon-star"></i><i class="active glyphicon glyphicon-star"></i><i class="glyphicon glyphicon-star"></i><i class="glyphicon glyphicon-star"></i>
+		                                            <a href="#">(215 ratings)</a>
+		                                        </div>
+		                                        <div class="tcb-hline"></div>
+		                                        <div class="tcb-product-price">
+		                                            $ 39.00 (15% off)
+		                                        </div>
+		                                    </div>
+		                                </div>
+		                            </div>
+		                            <div class="col-xs-6 col-sm-3">
+		                                <div class="tcb-product-item">
+		                                    <div class="tcb-product-photo">
+		                                        <a href="#"><img src="{{url_for('static',filename='img/courses/image7.jpg')}}" class="img-responsive" alt="a" /></a>
+		                                    </div>
+		                                    <div class="tcb-product-info">
+		                                        <div class="tcb-product-title">
+		                                            <h4><a href="#">Serverless Arcitecture on Amazon Web Services</a></h4></div>
+		                                        <div class="tcb-product-rating">
+		                                            <i class="active glyphicon glyphicon-star"></i><i class="active glyphicon glyphicon-star"></i><i class="active glyphicon glyphicon-star"></i><i class="active glyphicon glyphicon-star"></i><i class="active glyphicon glyphicon-star"></i>
+		                                            <a href="#">(10,345 ratings)</a>
+		                                        </div>
+		                                        <div class="tcb-hline"></div>
+		                                        <div class="tcb-product-price">
+		                                            $ 399.00 (37% off)
+		                                        </div>
+		                                    </div>
+		                                </div>
+		                            </div>
+		                        </div>
+		                    </div>
+		                    <div class="item">
+		                        <div class="row">
+		                            <div class="col-xs-6 col-sm-3">
+		                                <div class="tcb-product-item">
+		                                    <div class="tcb-product-photo">
+		                                        <a href="#"><img src="{{url_for('static',filename='img/courses/image8.jpg')}}" class="img-responsive" alt="a" /></a>
+		                                    </div>
+		                                    <div class="tcb-product-info">
+		                                        <div class="tcb-product-title">
+		                                            <h4><a href="#">Complete Python Bootcamp</a></h4></div>
+		                                        <div class="tcb-product-rating">
+		                                            <i class="active glyphicon glyphicon-star"></i><i class="active glyphicon glyphicon-star"></i><i class="glyphicon glyphicon-star"></i><i class="glyphicon glyphicon-star"></i><i class="glyphicon glyphicon-star"></i>
+		                                            <a href="#">(945 ratings)</a>
+		                                        </div>
+		                                        <div class="tcb-hline"></div>
+		                                        <div class="tcb-product-price">
+		                                            $ 99.00 (54% off)
+		                                        </div>
+		                                    </div>
+		                                </div>
+		                            </div>
+		                            <div class="col-xs-6 col-sm-3">
+		                                <div class="tcb-product-item">
+		                                    <div class="tcb-product-photo">
+		                                        <a href="#"><img src="{{url_for('static',filename='img/courses/image9.jpg')}}" class="img-responsive" alt="a" /></a>
+		                                    </div>
+		                                    <div class="tcb-product-info">
+		                                        <div class="tcb-product-title">
+		                                            <h4><a href="#">Complete Java MasterClass</a></h4></div>
+		                                        <div class="tcb-product-rating">
+		                                            <i class="active glyphicon glyphicon-star"></i><i class="glyphicon glyphicon-star"></i><i class="glyphicon glyphicon-star"></i><i class="glyphicon glyphicon-star"></i><i class="glyphicon glyphicon-star"></i>
+		                                            <a href="#">(15 ratings)</a>
+		                                        </div>
+		                                        <div class="tcb-hline"></div>
+		                                        <div class="tcb-product-price">
+		                                            $ 50.00 (11% off)
+		                                        </div>
+		                                    </div>
+		                                </div>
+		                            </div>
+		                            <div class="col-xs-6 col-sm-3">
+		                                <div class="tcb-product-item">
+		                                    <div class="tcb-product-photo">
+		                                        <a href="#"><img src="{{url_for('static',filename='img/courses/image10.jpg')}}" class="img-responsive" alt="a" /></a>
+		                                    </div>
+		                                    <div class="tcb-product-info">
+		                                        <div class="tcb-product-title">
+		                                            <h4><a href="#">PLearn Android 4.0 programming in java </a></h4></div>
+		                                        <div class="tcb-product-rating">
+		                                            <i class="active glyphicon glyphicon-star"></i><i class="active glyphicon glyphicon-star"></i><i class="active glyphicon glyphicon-star"></i><i class="active glyphicon glyphicon-star"></i><i class="glyphicon glyphicon-star"></i>
+		                                            <a href="#">(745 ratings)</a>
+		                                        </div>
+		                                        <div class="tcb-hline"></div>
+		                                        <div class="tcb-product-price">
+		                                            $ 30.00 (63% off)
+		                                        </div>
+		                                    </div>
+		                                </div>
+		                            </div>
+		                            <div class="col-xs-6 col-sm-3">
+		                                <div class="tcb-product-item">
+		                                    <div class="tcb-product-photo">
+		                                        <a href="#"><img src="{{url_for('static',filename='img/courses/image11.jpg')}}" class="img-responsive" alt="a" /></a>
+		                                    </div>
+		                                    <div class="tcb-product-info">
+		                                        <div class="tcb-product-title">
+		                                            <h4><a href="#">Machine Learning: From A-Z</a></h4></div>
+		                                        <div class="tcb-product-rating">
+		                                            <i class="active glyphicon glyphicon-star"></i><i class="active glyphicon glyphicon-star"></i><i class="active glyphicon glyphicon-star"></i><i class="glyphicon glyphicon-star"></i><i class="glyphicon glyphicon-star"></i>
+		                                            <a href="#">(145 ratings)</a>
+		                                        </div>
+		                                        <div class="tcb-hline"></div>
+		                                        <div class="tcb-product-price">
+		                                            $ 99.00 (29% off)
+		                                        </div>
+		                                    </div>
+		                                </div>
+		                            </div>
+		                        </div>
+		                    </div>
+		                </div>
+		                <!-- Controls -->
+		                <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+		                    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+		                    <span class="sr-only">Previous</span>
+		                </a>
+		                <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+		                    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+		                    <span class="sr-only">Next</span>
+		                </a>
+		            </div>
+		        </div>
+		    </div>
+
+	    </div>
+
+
+
+	    <!-- Section to display Testimonials-->
+	    <div class="container" style="margin-bottom: 10px">
+	    	<h1 style="margin-bottom:10px;text-align: center;">Testimonials</h1>
+
+			<div class="container">
+			  <div class="row">
+			    <div class="col-md-12">
+			      <div class="carousel slide" data-ride="carousel" id="quote-carousel">
+			      
+					<!-- Bottom Carousel Indicators -->
+					<ol class="carousel-indicators">
+					  <li data-target="#quote-carousel" data-slide-to="0" class="active"></li>
+					  <li data-target="#quote-carousel" data-slide-to="1"></li>
+					  <li data-target="#quote-carousel" data-slide-to="2"></li>
+					</ol>
+					        
+					<!-- Carousel Slides / Quotes -->
+					<div class="carousel-inner">
+
+					<!-- Quote 1 -->
+					<div class="item active">
+					  <div class="row">
+					    <div class="col-sm-12">
+					      <p style="font-style:italic;">&ldquo;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sed diam eget risus varius blandit sit amet non magna. Etiam porta sem malesuada magna mollis euismod. Nulla vitae elit libero, a pharetra augue. Donec id elit non mi porta gravida at eget metus.&rdquo;</p>
+					      <small><strong>Vulputate M., Dolor</strong></small>
+					    </div>
+					  </div>
+					</div>
+
+					<!-- Quote 2 -->
+					<div class="item">
+					  <div class="row">
+					    <div class="col-sm-12">
+					      <p style="font-style:italic;">&ldquo;Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Aenean lacinia bibendum nulla sed consectetur. Nullam id dolor id nibh ultricies vehicula ut id elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum.&rdquo;</p>
+					      <small><strong>Fringilla A., Vulputate Sit</strong></small>
+					    </div>
+					  </div>
+					</div>
+
+					<!-- Quote 3 -->
+					<div class="item">
+					  <div class="row">
+					    <div class="col-sm-12">
+					      <p style="font-style:italic;">&ldquo;Aenean lacinia bibendum nulla sed consectetur. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Maecenas faucibus mollis interdum. Cras mattis consectetur purus sit amet fermentum.&rdquo;</p>
+					      <small><strong>Aenean A., Justo Cras</strong></small>
+					    </div>
+					  </div>
+					</div>
+			        
+
+			      </div>                          
+			    </div>
+			  </div>
+			</div>
+
+	    </div>
+	    <div class="push"></div>
+	</div>
+	
+{% endblock %}
+
+<script type="text/javascript">
+		$(document).ready(function() {
+		  //carousel options
+		  $('#quote-carousel').carousel({
+		    pause: true, interval: 10000,
+		  });
+		});
+	</script>

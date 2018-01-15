@@ -1,0 +1,73 @@
+{% extends 'layout.html' %}
+{% from 'includes/_formhelpers.html' import render_field %}
+{% block body %}
+	<h1 class="page-header" style="text-align: center;">Tutor-Student Module</h1>
+	<div class="panel-group" id="accordion" style="width: 50%;margin: 70px auto;">
+	  <div class="panel panel-default">
+	    <div class="panel-heading">
+	      <h4 class="panel-title" style="text-align: center;">
+	        <a data-toggle="collapse" data-parent="#accordion" 
+	          href="#collapseOne">
+	          Sign Up as A Tutor
+	        </a>
+	      </h4>
+	    </div>
+	    <div id="collapseOne" class="panel-collapse collapse in">
+	      <div class="panel-body">
+	      <!-- Sign Up Tutor Form-->
+      		<form method="POST" action='/tutor_register'>
+				<div class="form-group">
+					{{render_field(tutor_form.username, class_='form-control')}}
+				</div>
+				<div class="form-group">
+					{{render_field(tutor_form.email, class_='form-control')}}
+				</div>
+				<div class="form-group">
+					{{render_field(tutor_form.password, class_='form-control')}}
+				</div>
+				<div class="form-group">
+					{{render_field(tutor_form.confirm_password, class_='form-control')}}
+				</div>
+				<p style="position: relative;left: 125px; top: 10px;">
+					<input type="submit" value="Sign Up" class="btn btn-primary btn-lg" style="width: 30%;">
+					<a class="btn btn-danger btn-lg" role="button" href='/tutor_login' style="width: 30%;">Sign In</a>
+				</p>
+			</form>
+	      </div>
+	    </div>
+	  </div>
+	  <div class="panel panel-default">
+	    <div class="panel-heading">
+	      <h4 class="panel-title" style="text-align: center;">
+	        <a data-toggle="collapse" data-parent="#accordion" 
+	          href="#collapseTwo">
+	          Sign Up as a Student
+	        </a>
+	      </h4>
+	    </div>
+	    <div id="collapseTwo" class="panel-collapse collapse">
+	      <div class="panel-body">
+	        <form method="POST" action='/student_register'>
+				<div class="form-group">
+					{{render_field(student_form.username, class_='form-control')}}
+				</div>
+				<div class="form-group">
+					{{render_field(student_form.email, class_='form-control')}}
+				</div>
+				<div class="form-group">
+					{{render_field(student_form.password, class_='form-control')}}
+				</div>
+				<div class="form-group">
+					{{render_field(student_form.confirm_password, class_='form-control')}}
+				</div>
+				<p style="position: relative;left: 125px;top: 10px;">
+					<input type="submit" value="Sign Up" class="btn btn-primary btn-lg" style="width: 30%;">
+					<a class="btn btn-danger btn-lg" role="button" href='/student_login' style="width: 30%;">Sign In</a>
+				</p>
+			</form>
+	      </div>
+	    </div>
+	  </div>
+	</div>
+	<div class="push" style="margin-bottom: 221px;"></div>
+{% endblock %}

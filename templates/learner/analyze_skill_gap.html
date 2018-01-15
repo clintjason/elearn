@@ -1,0 +1,68 @@
+{% extends 'layout.html' %}
+{% from 'includes/_formhelpers.html' import render_field %}
+{% block body %}
+	<div class="container-fluid">
+      <div class="row">
+        	<!-- Side bar -->
+        <div class="col-sm-3 col-md-2 sidebar">
+          <ul class="nav nav-sidebar">
+            <li><a href='/learner_edit_profile'>Profile</a></li>
+          </ul>
+          <ul class="nav nav-sidebar">
+            <li><a href="/learner_notification">Notification</a></li>
+          </ul>
+          <ul class="nav nav-sidebar">
+            <li class="active"><a href='/learner_analyze_skill_gap'>Analyze Skill Gap</a></li>
+          </ul>
+          <ul class="nav nav-sidebar">
+            <li><a href="#">Courses</a></li>
+          </ul>
+          <ul class="nav nav-sidebar">
+            <li><a href="#">Psychometric Test</a></li>
+          </ul>       
+        </div>
+          <!-- Main Content -->
+          <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+            <h1 class="page-header" style="margin-top: 40px;text-align: center;">Analyze Skill Gap</h1>
+
+            <h3 class="page-header">Set Goal State</h3>
+            <form method="POST" action="" class="form-group">
+              <select class="form-control selectpicker" style="width: 50%;" name="select_form">
+                {% for course in courses:%}
+                  <option value="{{ course.title }}" SELECTED>{{course.title}}</option>
+                {% endfor %}
+              </select>
+              <button type="submit" class="btn btn-primary" style="width: 25%;position: relative;left: 100px;top: 10px;">Select Goal Course</button>
+            </form>
+            
+            <h3 class="page-header" style="margin-top: 30px;">Set Actual State</h3>
+
+            <form action="" method="post" name="checks" class="form-group">
+              {% for dic in prerequisites: %}
+                  {% for k, val in dic.iteritems(): %}
+                    {% if k == key: %}
+                      {% for index in range(0, val|length): %}
+                         <p><input type="checkbox" name='check' value='{{val[index]}}'> <span style="position: relative; bottom:3px;">{{val[index]}}</span></p><br>
+                      {% endfor %}
+                    {% else: %}
+                        <div class="alert alert-info" style="text-align: center;">No Prerequisite in DB for the selected Course</div>
+                    {% endif %}
+                  {% endfor %}
+              {% endfor %}
+              <input type="submit" value="Set Actual State" class="btn btn-danger">
+            </form>
+
+            <h3 class="page-header" style="margin-top: 30px;"> Recommendations</h3>
+
+            {% for i in unchecked: %}
+              {% if i!= "": %}
+                <div class="alert alert-success" style="text-align: center;">Take the Learn {{i}} Course to get improve your productivity</div>
+              {% else: %}
+                <div class="alert alert-danger" style="text-align: center;">No Recommendations for this Course</div>
+              {% endif %}
+            {% endfor %}
+  		    </div>
+      </div>
+  </div>
+	<div class="push" style="margin-bottom: 50px;"></div>
+{% endblock %}t

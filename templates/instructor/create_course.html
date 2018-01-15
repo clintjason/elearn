@@ -1,0 +1,53 @@
+{% extends 'layout.html' %}
+{% from 'includes/_formhelpers.html' import render_field %}
+{% block body %}
+	<div class="container-fluid">
+      <div class="row">
+      	<!-- Side bar -->
+        <div class="col-sm-3 col-md-2 sidebar">
+          <ul class="nav nav-sidebar">
+            <li><a href='/instructor_edit_profile'>Profile</a></li>
+          </ul>
+          <ul class="nav nav-sidebar">
+          	<li><a href="/instructor_messages">Messages</a></li>
+          </ul>
+          <ul class="nav nav-sidebar">
+          	<li class="active"><a href='/instructor_create_course'> Create Course</a></li>
+          </ul>
+          <ul class="nav nav-sidebar">
+            <li><a href="#">Courses</a></li>
+          </ul>       
+        </div>
+        <!-- Main Content -->
+        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+          <h1 class="page-header" style="text-align: center;">Create  Course</h1>
+          <ul class="nav nav-tabs nav-justified">
+             <li class="active"><a href="/instructor_create_course">Course Goals</a></li>
+             <li><a href='#'>Test Video</a></li>
+             <li><a href="/instructor_curriculum">Curriculum</a></li>
+             <li><a href="#">Course Landing Page</a></li>
+             <li><a href="#">Course Setting</a></li>
+
+          </ul>
+          <div class="container-fluid" style="margin-bottom: 70px; margin-top: 40px;">
+            <form method="POST" action="">
+                <div class="form-group">
+                  {{render_field(form.course_title, class_='form-control')}}
+                </div>
+                <div class="form-group">
+                  {{render_field(form.course_prerequisites, class_='form-control')}}
+                </div>
+                <div class="form-group">
+                  {{render_field(form.target_student, class_='form-control')}}
+                </div>
+                <div class="form-group">
+                  {{render_field(form.course_objectives, class_='form-control')}}
+                </div>
+                <button type="submit" class="btn btn-danger"><i class="glyphicon glyphicon-plus"></i> Add Response</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+	<div class="push"></div>
+{% endblock %}

@@ -1,0 +1,22 @@
+{% extends 'layout.html' %}
+{% from 'includes/_formhelpers.html' import render_field %}
+{% block body %}
+	<div class="register_learner">
+		<form method="POST" action="">
+			<div class="form-group">
+				{{render_field(form.username, class_='form-control')}}
+			</div>
+			<div class="form-group">
+				{{render_field(form.email, class_='form-control')}}
+			</div>
+			<div class="form-group">
+				{{render_field(form.password, class_='form-control')}}
+			</div>
+			<div class="form-group">
+				{{render_field(form.confirm_password, class_='form-control')}}
+			</div>
+			<input type="submit" value="Sign Up" class="btn btn-primary">
+		</form>
+	</div>
+	<div class="push"></div>
+{% endblock %}

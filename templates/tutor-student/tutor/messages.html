@@ -1,0 +1,29 @@
+{% extends 'layout.html' %}
+{% from 'includes/_formhelpers.html' import render_field %}
+{% block body %}
+	<div class="container-fluid">
+      <div class="row">
+      	<!-- Side bar -->
+        <div class="col-sm-3 col-md-2 sidebar">
+          <ul class="nav nav-sidebar" style="margin-top: 50px;">
+            <li class="active"><a href='/tutor_edit_profile'>Edit Profile</a></li>
+          </ul>
+          <ul class="nav nav-sidebar">
+          	<li><a href="/tutor_messages">Messages & Resources</a></li>
+          </ul>
+          <ul class="nav nav-sidebar">
+          	<li><a href='/tutor_connect'>Tutor Connect</a></li>
+          </ul>     
+        </div>
+        <!-- Main Content -->
+        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+          <h1 class="page-header" style="text-align: center;">Notifications</h1>
+          <div class="container-fluid" style="margin-bottom: 70px; margin-top: 40px;">
+      			<div style="background-color: violet;text-align: center;padding: 15px;"><i class="glyphicon glyphicon-envelope"></i> <span class="badge">3</span><span>  You have New Messages</span></div>
+  		    </div>
+        </div>
+      </div>
+    </div>
+
+	<div class="push" style="margin-bottom: 280px;"></div>
+{% endblock %}

@@ -1,0 +1,45 @@
+{% extends 'layout.html' %}
+{% from 'includes/_formhelpers.html' import render_field %}
+{% block body %}
+	<div class="container-fluid">
+      <div class="row">
+      	<!-- Side bar -->
+        <div class="col-sm-3 col-md-2 sidebar">
+          <ul class="nav nav-sidebar">
+            <li class="active"><a href='/instructor_edit_profile'>Profile</a></li>
+          </ul>
+          <ul class="nav nav-sidebar">
+          	<li><a href="/instructor_messages">Messages</a></li>
+          </ul>
+          <ul class="nav nav-sidebar">
+          	<li><a href="#"> Create Course</a></li>
+          </ul>
+          <ul class="nav nav-sidebar">
+            <li><a href="#">Courses</a></li>
+          </ul>       
+        </div>
+        <!-- Main Content -->
+        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+        <h1 class="page-header" style="text-align: center;">Profile</h1>
+        <div class="container-fluid" style="margin-bottom: 70px; margin-top: 40px;">
+			<form method="POST" action="">
+				<div class="form-group">
+					{{render_field(form.username, class_='form-control')}}
+				</div>
+				<div class="form-group">
+					{{render_field(form.email, class_='form-control')}}
+				</div>
+				<div class="form-group">
+					{{render_field(form.password, class_='form-control')}}
+				</div>
+				<div class="form-group">
+					{{render_field(form.confirm_password, class_='form-control')}}
+				</div>
+				<input type="submit" value="Update Profile" class="btn btn-danger" style="width: 30%;">
+			</form>
+		</div>
+        </div>
+      </div>
+    </div>
+	<div class="push"></div>
+{% endblock %}

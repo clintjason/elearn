@@ -1,0 +1,44 @@
+{% extends 'layout.html' %}
+{% from 'includes/_formhelpers.html' import render_field %}
+{% block body %}
+	<div class="container-fluid">
+      <div class="row">
+      	<!-- Side bar -->
+        <div class="col-sm-3 col-md-2 sidebar">
+          <ul class="nav nav-sidebar" style="margin-top: 50px;">
+            <li class="active"><a href='/tutor_edit_profile'>Edit Profile</a></li>
+          </ul>
+          <ul class="nav nav-sidebar">
+          	<li><a href="/tutor_messages">Messages & Resources</a></li>
+          </ul>
+          <ul class="nav nav-sidebar">
+          	<li><a href="/tutor_connect">Tutor Connect</a></li>
+          </ul>     
+        </div>
+        <!-- Main Content -->
+        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+          <h1 class="page-header" style="text-align: center;">Profile</h1>
+          <ul class="nav nav-tabs nav-justified">
+             <li><a href="/tutor_edit_profile">Profile</a></li>
+             <li><a href="/tutor_description">Description</a></li>
+             <li class="active"><a href="/tutor_preferences">Preferences</a></li>
+             <li><a href="/tutor_upload">Uploads</a></li>
+          </ul>
+          <div class="container-fluid" style="margin-bottom: 70px; margin-top: 40px;">
+
+      			<form method="POST" action="">
+                <h3 class="page-header">Enter your Location</h3>
+                <input type="text" name="location" placeholder="Location" style="margin-bottom: 20px;">
+                <h3 class="page-header">Where will you like to have your classes?</h3>
+        				<p><input type="radio" name='option' value='Online Teaching'> <span style="position: relative; bottom:3px;">Online Teaching</span></p><br>
+                <p><input type="radio" name='option' value='Tuition at my Place'> <span style="position: relative; bottom:3px;">Tuition at my Place</span></p><br>
+                <p><input type="radio" name='option' value='Tuition at your Place'> <span style="position: relative; bottom:3px;">Tuition at your Place</span></p><br>
+        				<input type="submit" value="Update Preferences" class="btn btn-danger" style="width: 30%;">
+        		</form>
+  		    </div>
+        </div>
+      </div>
+    </div>
+
+	<div class="push"></div>
+{% endblock %}
